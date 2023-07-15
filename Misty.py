@@ -11,9 +11,10 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
-from MistyUiUi import Ui_MainWindow
+from MistyUi import Ui_MainWindow
 from pynput.keyboard import Key,Controller
 keyboard = Controller()
+
 print(">> Starting The Misty : Wait for few Seconds")
 
 def YouTube(term):
@@ -47,7 +48,7 @@ def MainExecution(self):
             date = datetime.datetime.now().strftime("%b %d %Y")
             Speak(f"It's {date}.")
 
-        elif "show table" in self.Data or "open table" in self.Data:
+        elif "table" in self.Data:
             from PIL import Image
             image_path = "Assets\Table.png"
             with Image.open(image_path) as image:
@@ -57,12 +58,37 @@ def MainExecution(self):
         elif "hi" in self.Data or "hello" in self.Data or "hey" in self.Data:
             Speak("Hello There, How can i be of your service?")
 
+        elif "how are you" in self.Data or "how are you doing" in self.Data:
+            Speak("I'm Great!, Thank you for asking!")    
+
+        elif "what" in self.Data or "how" in self.Data or "where" in self.Data or "when" in self.Data or "which" in self.Data or "who" in self.Data or "tell me" in self.Data or "show" in self.Data or "give" in self.Data or "defination" in self.Data:
+             import wikipedia as googleScrap
+             self.Data = self.Data.replace("tell me about","")
+             self.Data = self.Data.replace("misty","")
+             Speak("This is what I found on the Web")
+
+             try:
+                 pywhatkit.search(self.Data)
+                 result = googleScrap.summary(self.Data,2)
+                 Speak(result)
+
+             except:
+                 Speak("No speakable data available for your Query")
+
+        elif "goodbye" in self.Data or "bye" in self.Data or "good bye" in self.Data or "offline" in self.Data or "see ya" in self.Data or "sleep" in self.Data:
+                Speak("nice talking to you!")
+                hour = int(datetime.datetime.now().hour)
+                if hour >= 0 and hour < 18:
+                    Speak("Have a Nice day!")
+                    sys.exit()
+                elif hour >= 18 and hour < 24:
+                    Speak("Goodnight, Sweet dreams!")
+                    sys.exit()  
+
         elif "element" in self.Data or "elements":
              Speak("Please enter the atomic number of the element :")
-             pyautogui.keyDown("alt")
-             pyautogui.press("tab")
-             pyautogui.keyUp("alt")
              while True:
+               
                 print("")
                 user_input = input("Please enter the atomic number of the element : ")
                 if user_input == "1":
@@ -127,30 +153,9 @@ def MainExecution(self):
                     break
                 else:
                     break
-
-        elif "what" in self.Data or "how" in self.Data or "where" in self.Data or "when" in self.Data or "which" in self.Data or "who" in self.Data or "tell me about" in self.Data:
-             import wikipedia as googleScrap
-             self.Data = self.Data.replace("tell me about","")
-             self.Data = self.Data.replace("misty","")
-             Speak("This what I found on the Web")
-
-             try:
-                 pywhatkit.search(self.Data)
-                 result = googleScrap.summary(self.Data,2)
-                 Speak(result)
-
-             except:
-                 Speak("No speakable data available for your Query")
-
-        elif "goodbye" in self.Data or "bye" in self.Data or "good bye" in self.Data or "offline" in self.Data or "break" in self.Data or "sleep" in self.Data:
-                Speak("nice talking to you!")
-                hour = int(datetime.datetime.now().hour)
-                if hour >= 0 and hour < 18:
-                    Speak("Have a Nice day!")
-                    sys.exit()
-                elif hour >= 18 and hour < 24:
-                    Speak("Goodnight, Sweet dreams!")
-                    sys.exit()  
+        else:
+                pass
+        
                                           
 startExecution = MainThread()  
 
