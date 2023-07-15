@@ -1,6 +1,6 @@
-# Introducing AI-PTable, Your AI Learning Companion for the Periodic Table!
+# Introducing Misty: Your AI Study Buddy
 
-AI-PTable is an innovative artificial intelligence system designed to assist students in learning and mastering the Periodic Table of Elements. With its advanced capabilities and user-friendly interface, AI-PTable is revolutionizing the way students approach the study of chemistry.
+Misty is an innovative artificial intelligence system designed to assist students in learning and mastering the Periodic Table of Elements. With its advanced capabilities and user-friendly interface, Misty is revolutionizing the way students approach the study of chemistry.
 
 ## Built with
 
