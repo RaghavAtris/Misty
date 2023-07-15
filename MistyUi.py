@@ -22,7 +22,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, -40, 1921, 1141))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("Assets/Friday.gif"))
+        self.label.setPixmap(QtGui.QPixmap("Assets/Misty.gif"))
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(60, 800, 181, 121))
