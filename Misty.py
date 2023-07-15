@@ -1,5 +1,5 @@
 import datetime
-import pyautogui
+import os
 import pywhatkit
 import webbrowser
 import sys
@@ -14,7 +14,6 @@ from PyQt5.uic import loadUiType
 from MistyUi import Ui_MainWindow
 from pynput.keyboard import Key,Controller
 keyboard = Controller()
-
 print(">> Starting The Misty : Wait for few Seconds")
 
 def YouTube(term):
@@ -30,8 +29,7 @@ class MainThread(QThread):
     def run(self):
         MainExecution(self)
 
-def MainExecution(self): 
-
+def MainExecution(self):
     Speak("Hello There, I'm Misty. Your Own Virtual Consciousness. How can I be of Your Service?")
 
     while True:
@@ -66,7 +64,6 @@ def MainExecution(self):
              self.Data = self.Data.replace("tell me about","")
              self.Data = self.Data.replace("misty","")
              Speak("This is what I found on the Web")
-
              try:
                  pywhatkit.search(self.Data)
                  result = googleScrap.summary(self.Data,2)
@@ -74,6 +71,10 @@ def MainExecution(self):
 
              except:
                  Speak("No speakable data available for your Query")
+
+        elif "assesment" in self.Data or "test" in self.Data or "question answers" in self.Data:
+            Speak("Okay! Let's Start!")
+            os.startfile("Main.py")
 
         elif "goodbye" in self.Data or "bye" in self.Data or "good bye" in self.Data or "offline" in self.Data or "see ya" in self.Data or "sleep" in self.Data:
                 Speak("nice talking to you!")
@@ -88,7 +89,6 @@ def MainExecution(self):
         elif "element" in self.Data or "elements":
              Speak("Please enter the atomic number of the element :")
              while True:
-               
                 print("")
                 user_input = input("Please enter the atomic number of the element : ")
                 if user_input == "1":
