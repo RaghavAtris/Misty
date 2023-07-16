@@ -154,8 +154,8 @@ def MainExecution(self):
                 else:
                     break
         else:
-                pass
-        
+                
+                    pass
                                           
 startExecution = MainThread()  
 
