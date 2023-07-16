@@ -39,8 +39,8 @@ while True:
 
     if user_input == 'quiz':
         score = 0
-        num_questions = int(input("Enter the number of questions for the quiz: "))
         Speak("Enter the number of questions for the quiz: ")
+        num_questions = int(input("Enter the number of questions for the quiz: "))
         quiz_elements = random.sample(list(periodic_table.keys()), num_questions)
 
         Speak("Quiz starting...\n")
