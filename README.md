@@ -9,4 +9,4 @@ Misty is an innovative artificial intelligence system designed to assist student
 ## System Requirements
 - Operating System: Works on Windows 11/10/8
 - Disk Space: At least 150 MB
-- Web-Cam for Hand Recognition (Necessary)
+- Internet Connection & Microphone (Necessary)
