@@ -46,27 +46,20 @@ def MainExecution(self):
             date = datetime.datetime.now().strftime("%b %d %Y")
             Speak(f"It's {date}.")
 
-        elif "table" in self.Data:
-            from PIL import Image
-            image_path = "Assets\Table.png"
-            with Image.open(image_path) as image:
-                image.show()
-                pass
-
         elif "hi" in self.Data or "hello" in self.Data or "hey" in self.Data:
             Speak("Hello There, How can i be of your service?")
 
         elif "how are you" in self.Data or "how are you doing" in self.Data:
             Speak("I'm Great!, Thank you for asking!")    
 
-        elif "what" in self.Data or "how" in self.Data or "where" in self.Data or "when" in self.Data or "which" in self.Data or "who" in self.Data or "tell me" in self.Data or "show" in self.Data or "give" in self.Data or "defination" in self.Data:
+        elif "What" in self.Data or "How" in self.Data or "Where" in self.Data or "When" in self.Data or "Which" in self.Data or "Who" in self.Data or "Tell me" in self.Data or "Show" in self.Data or "Give" in self.Data or "Defination" in self.Data:
              import wikipedia as googleScrap
              self.Data = self.Data.replace("tell me about","")
              self.Data = self.Data.replace("misty","")
              Speak("This is what I found on the Web")
              try:
                  pywhatkit.search(self.Data)
-                 result = googleScrap.summary(self.Data,2)
+                 result = googleScrap.summary(self.Data,1)
                  Speak(result)
 
              except:
@@ -75,6 +68,14 @@ def MainExecution(self):
         elif "assesment" in self.Data or "test" in self.Data or "question answers" in self.Data:
             Speak("Okay! Let's Start!")
             os.startfile("Main.py")
+            sys.exit()
+
+        elif "table" in self.Data:
+            from PIL import Image
+            image_path = "Assets\Table.png"
+            with Image.open(image_path) as image:
+                image.show()
+                pass 
 
         elif "goodbye" in self.Data or "bye" in self.Data or "good bye" in self.Data or "offline" in self.Data or "see ya" in self.Data or "sleep" in self.Data:
                 Speak("nice talking to you!")
@@ -85,7 +86,7 @@ def MainExecution(self):
                 elif hour >= 18 and hour < 24:
                     Speak("Goodnight, Sweet dreams!")
                     sys.exit()  
-
+    
         elif "element" in self.Data or "elements":
              Speak("Please enter the atomic number of the element :")
              while True:
@@ -154,9 +155,8 @@ def MainExecution(self):
                 else:
                     break
         else:
-                
-                    pass
-                                          
+                pass       
+                                      
 startExecution = MainThread()  
 
 class Main(QMainWindow):
