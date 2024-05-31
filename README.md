@@ -1,6 +1,6 @@
 # Introducing Misty: Your AI Study Buddy
 
-Misty is an innovative artificial intelligence system designed to assist students in learning and mastering the Periodic Table of Elements. With its advanced capabilities and user-friendly interface, Misty is revolutionizing the way students approach the study of chemistry.
+Misty is an innovative artificial intelligence voice teaching and productivity assistant designed to assist teachers in traditional classrooms and provide personalized learning experiences to students at home with tutoring services.
 
 ## Built with
 
@@ -8,5 +8,5 @@ Misty is an innovative artificial intelligence system designed to assist student
 
 ## System Requirements
 - Operating System: Works on Windows 11/10/8
-- Disk Space: At least 150 MB
+- Disk Space: At least 1 GB
 - Internet Connection & Microphone (Necessary)
