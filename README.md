@@ -1,4 +1,4 @@
-# Introducing Misty: Your AI Study Buddy
+# Introducing Misty: Your 24/7 AI Tutor
 
 Misty is an innovative artificial intelligence voice teaching and productivity assistant designed to assist teachers in traditional classrooms and provide personalized learning experiences to students at home with tutoring services.
 
